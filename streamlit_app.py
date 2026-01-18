@@ -17,7 +17,7 @@ def calcular_cockcroft_gault(edad, peso, creatinina, sexo):
     return resultado
 
 def obtener_recomendacion(clearence, sexo):
-    # Definimos el vocativo según el sexo
+    # Definimos el vocativo según el sexo seleccionado
     vocativo = "comadre" if sexo == "Mujer" else "compadre"
     
     if clearence > 90:
@@ -25,11 +25,11 @@ def obtener_recomendacion(clearence, sexo):
     elif 60 <= clearence <= 90:
         return "Leve", f"A echarle una miradita {vocativo}, pero piola."
     elif 30 <= clearence < 60:
-        return "Moderada", "Ojo ahí, hay que ajustar dosis."
+        return "Moderada", f"Ojo ahí {vocativo}, ajustar dosis."
     elif 15 <= clearence < 30:
-        return "Severa", "La cosa se puso peluda, control estricto."
+        return "Severa", f"La cosa se puso peluda {vocativo}, control estricto."
     else:
-        return "Terminal", "Situación crítica, a urgencias."
+        return "Terminal", f"Situación crítica {vocativo}, a urgencias."
 
 def crear_gauge(valor):
     fig = go.Figure(go.Indicator(
@@ -77,7 +77,7 @@ with col2:
 # Botón de cálculo
 if st.button("Calcular ahora ya"):
     resultado = calcular_cockcroft_gault(edad, peso, creatinina, sexo)
-    estado, consejo = obtener_recomendacion(resultado)
+    estado, consejo = obtener_recomendacion(resultado, sexo)
     
     st.divider()
     
