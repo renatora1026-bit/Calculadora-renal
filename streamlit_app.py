@@ -57,7 +57,7 @@ def crear_gauge(valor):
 st.set_page_config(page_title="Calculadora Renal Chilensis", page_icon="🩺")
 
 # Título y descripción
-st.title("🩺 Calculadora de Riñones (Cockcroft-Gault)")
+st.title("🩺 Calculadora Renal QF Hosp Saavedra  (Cockcroft-Gault)")
 st.write("Bienvenido a la herramienta pa' ver cómo andan los filtros.")
 
 # Inputs en la barra lateral o principal
