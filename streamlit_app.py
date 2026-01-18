@@ -16,13 +16,16 @@ def calcular_cockcroft_gault(edad, peso, creatinina, sexo):
     resultado = (numerador / denominador) * constante_sexo
     return resultado
 
-def obtener_recomendacion(clearence):
+def obtener_recomendacion(clearence, sexo):
+    # Definimos el vocativo según el sexo
+    vocativo = "comadre" if sexo == "Mujer" else "compadre"
+    
     if clearence > 90:
-        return "Normal", "Todo ok compadre/comadre, riñones al 100."
+        return "Normal", f"Todo ok {vocativo}, riñones al 100."
     elif 60 <= clearence <= 90:
-        return "Leve", "A echarle una miradita, pero piola."
+        return "Leve", f"A echarle una miradita {vocativo}, pero piola."
     elif 30 <= clearence < 60:
-        return "Moderada", "Ojo ahí, ajustar dosis."
+        return "Moderada", "Ojo ahí, hay que ajustar dosis."
     elif 15 <= clearence < 30:
         return "Severa", "La cosa se puso peluda, control estricto."
     else:
