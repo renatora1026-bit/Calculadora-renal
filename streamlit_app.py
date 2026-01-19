@@ -59,10 +59,13 @@ def crear_gauge(valor):
 # Configuración de la página
 st.set_page_config(page_title="Calculadora Renal Chilensis", page_icon="🩺")
 
-# Título y descripción
-st.title("🩺 Calculadora Renal QF Hosp Saavedra  (Cockcroft-Gault)")
-st.write("Bienvenido a la herramienta pa' ver cómo andan los filtros.")
 
+# Muestra tu logo personalizado
+st.image("logo.png", width=150)
+
+# Título y descripción con tu sello profesional
+st.title("💊 Calculadora Renal QF Hosp Saavedra")
+st.write("Bienvenido a la herramienta pa' ver cómo andan los filtros.")
 # Inputs en la barra lateral o principal
 col1, col2 = st.columns(2)
 
